@@ -1,0 +1,8 @@
+__pycache__/
+models/
+venv/
+tests/
+results/
+*.db
+*.db-shm
+*db-wal
