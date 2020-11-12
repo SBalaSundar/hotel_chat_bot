@@ -25,3 +25,16 @@ rules:
 #   - action: newsletter_form
 #   - active_loop: null
 #   - action: utter_subscribed
+
+- rule: ask_room_type
+  steps:
+    - intent: rooms_count
+    - action: utter_ask_room_type
+    - active_loop: utter_ask_room_type
+
+- rule: submit_room_type
+  condition:
+  - active_loop: utter_ask_room_type
+  steps:
+  - action: choose_room_type
+  - active_loop: null

@@ -91,4 +91,27 @@ nlu:
     - Rooms for stay
     - Need rooms for stay
     - Show rooms to book
-    - I want to book room
+    - I need a room for my stay
+    - book a room
+    - book room
+    - I want to book a room
+    - Need a room for my stay
+    - Looking for a room
+    - Can you book a room for me?
+    - room booking
+- intent: rooms_count
+  examples: |
+    - 1 room
+    - 2
+    - 3
+    - 4 rooms
+    - 5
+    - 6
+    - 7 rooms
+    - 8
+    - 9
+    - 10 rooms
+- intent: choose
+  examples: |
+    - /choose{"room_type": "simple"}
+    - /choose{"room_type": "deluxe"}

@@ -10,8 +10,22 @@ intents:
 - mood_unhappy
 - bot_challenge
 - book_rooms
+- choose
+- rooms_count
 entities:
-- room
+- number_of_rooms
+- room_type
+- rooms_count
+slots:
+  number_of_rooms:
+    type: text
+    influence_conversation: true
+  room_type:
+    type: categorical
+    influence_conversation: true
+    values:
+    - simple
+    - deluxe
 responses:
   utter_greet:
   - text: Hey! How are you?
@@ -27,6 +41,15 @@ responses:
   - text: I am a bot, powered by Rasa.
   utter_ask_number_of_rooms:
   - text: How many rooms would you like to book?
+  utter_ask_room_type:
+  - buttons:
+    - payload: '/choose{"room_type": "simple"}'
+      title: Simple
+    - payload: '/choose{"room_type": "deluxe"}'
+      title: Deluxe
+    text: What type of room would yoy want to book?
+  utter_confirm_room_type:
+  - text: Nice choice!. You have choosen {number_of_rooms} {room_type} rooms.
 actions:
 - utter_greet
 - utter_did_that_help
@@ -34,3 +57,6 @@ actions:
 - utter_goodbye
 - utter_iamabot
 - utter_ask_number_of_rooms
+- utter_ask_room_type
+- utter_confirm_room_type
+- choose_room_type
