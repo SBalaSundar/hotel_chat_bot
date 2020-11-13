@@ -1,34 +1,100 @@
 version: "2.0"
+
 stories:
+
 - story: happy path
   steps:
   - intent: greet
   - action: utter_greet
   - intent: mood_great
   - action: utter_happy
-- story: sad path 1
+
+- story: flow_1
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-- story: book_room
+  - intent: book_rooms
+  - action: utter_ask_number_of_rooms
+  - intent: booking_with_number_of_rooms
+  - action: utter_ask_room_type
+  - intent: choose
+  - action: utter_ask_confirmation
+
+- story: flow_2
   steps:
   - intent: greet
   - action: utter_greet
   - intent: book_rooms
   - action: utter_ask_number_of_rooms
-  - intent: rooms_count
+  - intent: booking_with_number_of_rooms
   - action: utter_ask_room_type
   - intent: choose
-  - action: utter_confirm_room_type
+  - action: utter_ask_confirmation
+  - intent: affirm
+  - action: utter_done
+
+- story: flow_3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: booking_with_number_of_rooms
+  - action: utter_ask_room_type
+  - intent: choose
+  - action: utter_ask_confirmation
+
+- story: flow_4
+  steps:
+  - intent: room_cleaning_request
+  - action: utter_ask_cleaning_time
+  - intent: room_cleaning_with_schedule
+  # - action: relative_action
+  - intent: affirm
+  - action: utter_done
+
+- story: flow_5
+  steps:
+  - intent: room_cleaning_request
+  - action: utter_ask_cleaning_time
+  - intent: clean_room_immediately
+  - action: utter_cleaning_confirmation
+  - intent: affirm
+  - action: utter_done
+
+- story: checkin_qa_flow
+  steps:
+  - intent: qa_checkin
+  - action: utter_qa_checkin
+
+- story: checkout_qa_flow
+  steps:
+  - intent: qa_checkout
+  - action: utter_qa_checkout
+
+- story: cancel_booking_flow
+  steps:
+  - intent: cancel_booking
+  - action: utter_qa_cancel_booking
+
+- story: cancellation_policy_qa_flow
+  steps:
+  - intent: qa_cancellation_policy
+  - action: utter_qa_cancellation_policy
+
+- story: qa_breakfast_flow
+  steps:
+  - intent: qa_breakfast_availability
+  - action: utter_qa_breakfast_availability
+
+- story: qa_breakfast_timing_flow
+  steps:
+  - intent: qa_breakfast_timing
+  - action: utter_qa_breakfast_timing
+
+- story: qa_restaurant_availability_flow
+  steps:
+  - intent: qa_restaurant_availability
+  - action: utter_qa_restaurant_availability
+
+- story: qa_restaurant_timing_flow
+  steps:
+  - intent: qa_restaurant_timing
+  - action: utter_qa_restaurant_timing
+

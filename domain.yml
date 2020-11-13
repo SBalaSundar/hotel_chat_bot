@@ -10,13 +10,29 @@ intents:
 - mood_unhappy
 - bot_challenge
 - book_rooms
+- book_one_room
+- booking_with_number_of_rooms
 - choose
-- rooms_count
+- room_cleaning_request
+- room_cleaning_with_schedule
+- clean_room_immediately
+- cancel_booking
+- qa_checkin
+- qa_checkout
+- qa_cancellation_policy
+- qa_breakfast_availability
+- qa_breakfast_timing
+- qa_restaurant_availability
+- qa_restaurant_timing
+- number_of_rooms
 entities:
 - number_of_rooms
 - room_type
-- rooms_count
+- number_of_hours
 slots:
+  number_of_hours:
+    type: text
+    influence_conversation: true
   number_of_rooms:
     type: text
     influence_conversation: true
@@ -37,26 +53,61 @@ responses:
   - text: Great, carry on!
   utter_goodbye:
   - text: Bye
-  utter_iamabot:
-  - text: I am a bot, powered by Rasa.
   utter_ask_number_of_rooms:
   - text: How many rooms would you like to book?
   utter_ask_room_type:
   - buttons:
     - payload: '/choose{"room_type": "simple"}'
-      title: Simple
+      title: simple
     - payload: '/choose{"room_type": "deluxe"}'
-      title: Deluxe
+      title: deluxe
     text: What type of room would yoy want to book?
-  utter_confirm_room_type:
-  - text: Nice choice!. You have choosen {number_of_rooms} {room_type} rooms.
+  utter_ask_confirmation:
+  - text: You have choosen to book {number_of_rooms} {room_type} rooms.
+  utter_ask_cleaning_time:
+  - text: When should I arrange for a cleaning?
+  utter_cleaning_confirmation:
+  - text: Sure, I will send someone to your room right away.
+  utter_booking_done:
+  - text: Booked Successfully!
+  utter_qa_checkin:
+  - text: Check-in time starts at 4 PM. Minimum check-in age is 21. Please contact
+      the reception for early check-in requests.
+  utter_qa_checkout:
+  - text: Check-out time is 11 AM. Please contact the reception for late checkout
+      requests.
+  utter_qa_cancel_booking:
+  - text: To cancel a reservation, select the “Reservations” link from the homepage.
+  utter_qa_cancellation_policy:
+  - text: The booking deposit is refundable if the cancellation occurs at least 15
+      days before arrival. For cancellations made after this limit, a penalty will
+      be imposed based on the cancellation policy.
+  utter_qa_restaurant_availability:
+  - text: Yes, the hotel has a restaurant called the Zephyr Bar. With our menu we
+      strive to reflect the historic art and the spirit of our neighborhood by offering
+      a glimpse into what makes our area unique.
+  utter_qa_breakfast_availability:
+  - text: The hotel provides its guests with a free made-to-order breakfast each morning.
+  utter_qa_breakfast_timing:
+  - text: Monday through Friday breakfast is 6 am to 9 am. On Saturday and Sunday,
+      we are open from 7 am to 10:30 am.
+  utter_qa_restaurant_timing:
+  - text: Our restaurant serves a dazzling 24-hour menu.
+  utter_done:
+  - text: Booked Successfully!
 actions:
-- utter_greet
-- utter_did_that_help
-- utter_happy
-- utter_goodbye
-- utter_iamabot
 - utter_ask_number_of_rooms
 - utter_ask_room_type
-- utter_confirm_room_type
-- choose_room_type
+- utter_ask_confirmation
+- utter_ask_cleaning_time
+- utter_cleaning_confirmation
+- utter_booking_done
+- utter_qa_checkin
+- utter_qa_checkout
+- utter_qa_cancel_booking
+- uttet_qa_cancellation_policy
+- utter_qa_restaurant_availability
+- utter_qa_breakfast_availability
+- utter_qa_breakfast_timing
+- utter_qa_restaurant_timing
+- utter_done

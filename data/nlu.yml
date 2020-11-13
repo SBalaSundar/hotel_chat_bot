@@ -98,20 +98,135 @@ nlu:
     - Need a room for my stay
     - Looking for a room
     - Can you book a room for me?
-    - room booking
-- intent: rooms_count
+- intent: booking_with_number_of_rooms
   examples: |
-    - 1 room
+    - I want to book 4 rooms
+    - I want to book four rooms
+    - Book 2 rooms
+    - Book two rooms
+    - Can you book three rooms for me?
+    - Can you book 5 rooms for my holidays?
+    - I need 2 rooms form my family vacation
+    - I am looking for 6 rooms for booking
+- intent: number_of_rooms
+  examples: |
+    - 1
     - 2
     - 3
-    - 4 rooms
+    - 4
     - 5
     - 6
-    - 7 rooms
+    - 7
     - 8
     - 9
-    - 10 rooms
-- intent: choose
+    - 10
+- intent: room_cleaning_request
   examples: |
-    - /choose{"room_type": "simple"}
-    - /choose{"room_type": "deluxe"}
+    - I want my room to be cleaned
+    - Can you send someone to clean my room?
+    - Clean my room
+    - Dirty room
+    - My room is dirty
+    - My room is not clean
+    - Send someone to clean my room
+    - I want to schedule my room cleaning
+- intent: room_cleaning_with_schedule
+  examples: |
+    - I want my room to be cleaned in 2 hours
+    - Clean my room in 2 hrs
+    - I want my room to be cleaned in 2 hrs
+    - Clean my room in two hours
+    - Send someone to clean my room in 3 hours
+- intent: clean_room_immediately
+  examples: |
+    - I want my room cleaned immediately
+    - Send someone immediately to clean my room
+    - Send someone to clean my room immediately
+    - I want my room cleaned now
+    - I want my room cleaned rightnow
+    - Clean my room immediately
+    - Cleany my room now
+    - Clean the dirts from my room now
+- intent: qa_checkin
+  examples: |
+    - When can I check-in
+    - When can I check in to the room
+    - At what time I can check in?
+    - Give me the check in timings
+    - Check-in timings
+    - Check in details
+    - Check-in rules
+    - Check in rules of the hotel
+    - Hotel check-in rules
+    - What are your check-in timings?
+- intent: qa_checkout
+  examples: |
+    - When can I check-out
+    - When can I check out my room
+    - At what time I can check-out
+    - Check out timings
+    - Check-out rules
+    - Check out details
+    - Check-out rules of the hotel
+    - Hotel check out rules
+    - Hotel checkout timings
+    - What are your check-out timings?
+    - checkout policy
+- intent: cancel_booking
+  examples: |
+    - Cancel booking
+    - Cancel my booking
+    - Cancel my room reservation
+    - How can I cancel my booking
+    - How can I cancel my reservation
+    - Help me to cancel my reservation
+    - Cancel reservation
+    - Reservation cancellation
+    - Booking cancellation
+    - I want to cancel my room booking
+    - I want to cancel my reservation
+    - How do I cancel a reservation?
+- intent: qa_cancellation_policy
+  examples: |
+    - What is the cancellation policy?
+    - Cancellation policy
+    - Hotel's cancellation policy
+    - Show me the cancellation policy
+    - Give me the cancellation policy
+    - What is your cancellation policy?
+    - What about the cancellation policy?
+- intent: qa_breakfast_availability
+  examples: |
+    - Breakfast?
+    - Breakfast provided?
+    - Is breakfast available?
+    - Is the hotel offering breakfast
+    - Does the hotel offer breakfast?
+    - Breakfast availability
+    - What about the breakfast?
+- intent: qa_breakfast_timing
+  examples: |
+    - What are the breakfast timings?
+    - Breakfast timings?
+    - Breakfast timing
+    - Breakfast time
+    - When the breakfast will be served
+    - Breakfast serving timing of the hotel
+- intent: qa_restaurant_availability
+  examples: |
+    - Is restaurant is there?
+    - Does the hotel have restaurant?
+    - What about the restaurant facility?
+    - Is restaurant available?
+    - Restaurant availability
+    - Availability of the Restaurant
+    - Is the restaurant is available at the hotel
+- intent: qa_restaurant_timing
+  examples: |
+    - Give me the restaurant timings
+    - Opening and closing timings of the restaurant
+    - Restaurant timing?
+    - Timings of the restaurant
+    - Closing timing of the restaurant
+    - Available timings of the restaurant
+    - What are the timings of your restaurant

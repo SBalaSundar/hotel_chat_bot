@@ -7,34 +7,42 @@ rules:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: ask_checkin_qa_anytime
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - intent: qa_checkout
+  - action: utter_qa_checkout
 
-# - rule: active subscribe form
-#   steps:
-#   - intent: subscribe
-#   - action: newsletter_form
-#   - active_loop: newsletter_form
-
-# - rule: submit form
-#   condition: 
-#   - active_loop: newsletter_form
-#   steps:
-#   - action: newsletter_form
-#   - active_loop: null
-#   - action: utter_subscribed
-
-- rule: ask_room_type
+- rule: ask_ckeckout_qa_anytime
   steps:
-    - intent: rooms_count
-    - action: utter_ask_room_type
-    - active_loop: utter_ask_room_type
+  - intent: qa_checkout
+  - action: utter_qa_checkout
 
-- rule: submit_room_type
-  condition:
-  - active_loop: utter_ask_room_type
+- rule: ask_cancel_booking_anytime
   steps:
-  - action: choose_room_type
-  - active_loop: null
+  - intent: cancel_booking
+  - action: utter_qa_cancel_booking
+
+- rule: ask_cancellation_policy_qa_anytime
+  steps:
+  - intent: qa_cancellation_policy
+  - action: utter_qa_cancellation_policy
+
+- rule: ask_qa_breakfast_anytime
+  steps:
+  - intent: qa_breakfast_availability
+  - action: utter_qa_breakfast_availability
+
+- rule: ask_qa_breakfast_timing_anytime
+  steps:
+  - intent: qa_breakfast_timing
+  - action: utter_qa_breakfast_timing
+
+- rule: ask_qa_restaurant_availability_anytime
+  steps:
+  - intent: qa_restaurant_availability
+  - action: utter_qa_restaurant_availability
+
+- rule: ask_qa_restaurant_timing_anytime
+  steps:
+  - intent: qa_restaurant_timing
+  - action: utter_qa_restaurant_timing
