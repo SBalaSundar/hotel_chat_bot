@@ -1,0 +1,49 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: ask_checkin_qa_anytime
+  steps:
+  - intent: qa_checkout
+  - action: utter_qa_checkout
+
+- rule: ask_ckeckout_qa_anytime
+  steps:
+  - intent: qa_checkout
+  - action: utter_qa_checkout
+
+- rule: ask_cancel_booking_anytime
+  steps:
+  - intent: cancel_booking
+  - action: utter_qa_cancel_booking
+  - action: utter_qa_cancel_booking_detailed
+
+- rule: ask_cancellation_policy_qa_anytime
+  steps:
+  - intent: qa_cancellation_policy
+  - action: utter_qa_cancellation_policy
+
+- rule: ask_qa_breakfast_anytime
+  steps:
+  - intent: qa_breakfast_availability
+  - action: utter_qa_breakfast_availability
+
+- rule: ask_qa_breakfast_timing_anytime
+  steps:
+  - intent: qa_breakfast_timing
+  - action: utter_qa_breakfast_timing
+
+- rule: ask_qa_restaurant_availability_anytime
+  steps:
+  - intent: qa_restaurant_availability
+  - action: utter_qa_restaurant_availability
+
+- rule: ask_qa_restaurant_timing_anytime
+  steps:
+  - intent: qa_restaurant_timing
+  - action: utter_qa_restaurant_timing
