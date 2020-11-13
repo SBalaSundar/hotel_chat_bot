@@ -78,6 +78,10 @@ responses:
       requests.
   utter_qa_cancel_booking:
   - text: To cancel a reservation, select the “Reservations” link from the homepage.
+  utter_qa_cancel_booking_detailed:
+  - text: On the Reservations page, under the heading ‘View, Change or Cancel a Reservation,’
+      enter your confirmation number, and either the last name on the reservation
+      or the last four digits of the credit card used to make the reservation.
   utter_qa_cancellation_policy:
   - text: The booking deposit is refundable if the cancellation occurs at least 15
       days before arrival. For cancellations made after this limit, a penalty will
@@ -94,17 +98,19 @@ responses:
   utter_qa_restaurant_timing:
   - text: Our restaurant serves a dazzling 24-hour menu.
   utter_done:
-  - text: Booked Successfully!
+  - text: Rooms Booked Successfully!
 actions:
 - utter_ask_number_of_rooms
 - utter_ask_room_type
 - utter_ask_confirmation
 - utter_ask_cleaning_time
+- action_schedule_cleaning
 - utter_cleaning_confirmation
 - utter_booking_done
 - utter_qa_checkin
 - utter_qa_checkout
 - utter_qa_cancel_booking
+- utter_qa_cancel_booking_detailed
 - uttet_qa_cancellation_policy
 - utter_qa_restaurant_availability
 - utter_qa_breakfast_availability

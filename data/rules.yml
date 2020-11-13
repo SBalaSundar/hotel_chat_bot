@@ -21,6 +21,7 @@ rules:
   steps:
   - intent: cancel_booking
   - action: utter_qa_cancel_booking
+  - action: utter_qa_cancel_booking_detailed
 
 - rule: ask_cancellation_policy_qa_anytime
   steps:

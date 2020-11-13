@@ -6,8 +6,13 @@ pipeline:
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer
-    intent_tokenization_flag: true
-    intent_split_symbol: "+"
+  - name: RegexEntityExtractor
+      # text will be processed with case insensitive as default
+    case_sensitive: False
+      # use lookup tables to extract entities
+    use_lookup_tables: True
+      # use regexes to extract entities
+    use_regexes: True
   - name: CountVectorsFeaturizer
     analyzer: "char_wb"
     min_ngram: 1

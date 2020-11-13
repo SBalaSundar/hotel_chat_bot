@@ -2,13 +2,6 @@ version: "2.0"
 
 stories:
 
-- story: happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-
 - story: flow_1
   steps:
   - intent: book_rooms
@@ -17,6 +10,47 @@ stories:
   - action: utter_ask_room_type
   - intent: choose
   - action: utter_ask_confirmation
+
+- story: flow_with_checkin_qa_after_number_of_rooms
+  steps:
+  - intent: book_rooms
+  - action: utter_ask_number_of_rooms
+  - action: utter_qa_checkin
+  - intent: booking_with_number_of_rooms
+  - action: utter_ask_room_type
+  - intent: choose
+  - action: utter_ask_confirmation
+
+- story: flow_with_checkin_qa_before_room_type
+  steps:
+  - intent: book_rooms
+  - action: utter_ask_number_of_rooms
+  - intent: booking_with_number_of_rooms
+  - action: utter_qa_checkin
+  - action: utter_ask_room_type
+  - intent: choose
+  - action: utter_ask_confirmation
+
+- story: flow_with_breakfast_qa_after_number_of_rooms
+  steps:
+  - intent: book_rooms
+  - action: utter_ask_number_of_rooms
+  - action: utter_qa_breakfast_availability
+  - intent: booking_with_number_of_rooms
+  - action: utter_ask_room_type
+  - intent: choose
+  - action: utter_ask_confirmation
+
+- story: flow_with_breakfast_qa_before_room_type
+  steps:
+  - intent: book_rooms
+  - action: utter_ask_number_of_rooms
+  - intent: booking_with_number_of_rooms
+  - action: utter_qa_breakfast_availability
+  - action: utter_ask_room_type
+  - intent: choose
+  - action: utter_ask_confirmation
+
 
 - story: flow_2
   steps:
@@ -45,7 +79,7 @@ stories:
   - intent: room_cleaning_request
   - action: utter_ask_cleaning_time
   - intent: room_cleaning_with_schedule
-  # - action: relative_action
+  - action: action_schedule_cleaning
   - intent: affirm
   - action: utter_done
 
@@ -57,6 +91,11 @@ stories:
   - action: utter_cleaning_confirmation
   - intent: affirm
   - action: utter_done
+
+- story: flow_6
+  steps:
+  - intent: room_cleaning_with_schedule
+  - action: action_schedule_cleaning
 
 - story: checkin_qa_flow
   steps:
@@ -72,6 +111,7 @@ stories:
   steps:
   - intent: cancel_booking
   - action: utter_qa_cancel_booking
+  - action: utter_qa_cancel_booking_detailed
 
 - story: cancellation_policy_qa_flow
   steps:

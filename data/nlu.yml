@@ -108,6 +108,8 @@ nlu:
     - Can you book 5 rooms for my holidays?
     - I need 2 rooms form my family vacation
     - I am looking for 6 rooms for booking
+    - I need to book 2 rooms
+    - I want two rooms for my stay
 - intent: number_of_rooms
   examples: |
     - 1
